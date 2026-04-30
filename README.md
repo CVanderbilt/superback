@@ -10,6 +10,8 @@ TypeScript REST API with Express, Prisma, PostgreSQL, and JWT-based auth.
 - `POST /api/auth/refresh`
 - `POST /api/auth/logout`
 - `GET /api/auth/me` with `Authorization: Bearer <accessToken>`
+- `GET /super` list available supers from DB
+- `POST /super/:superId/scrape` launch parser stub for a specific super
 
 ## Local Development
 

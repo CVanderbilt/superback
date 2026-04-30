@@ -5,6 +5,7 @@ import morgan from "morgan";
 import { env } from "./config/env.js";
 import { errorHandler, notFoundHandler } from "./middleware/errorHandler.js";
 import { authRouter } from "./routes/auth.routes.js";
+import { superRouter } from "./routes/super.routes.js";
 
 export function createApp() {
   const app = express();
@@ -24,6 +25,7 @@ export function createApp() {
   });
 
   app.use("/api/auth", authRouter);
+  app.use("/super", superRouter);
   app.use(notFoundHandler);
   app.use(errorHandler);
 

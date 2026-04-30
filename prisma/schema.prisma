@@ -30,6 +30,14 @@ model RefreshToken {
   @@index([userId])
 }
 
+model Super {
+  id        String   @id @default(uuid())
+  name      String
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 enum UserRole {
   USER
   ADMIN
