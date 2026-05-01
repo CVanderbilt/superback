@@ -82,8 +82,8 @@ model NormalizedProduct {
   searchName        String
   measurementType   MeasurementType
   measurementValue  Decimal         @db.Decimal(10, 3)
-  categoryId        String?
-  category          Category?       @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  categoryId        String
+  category          Category        @relation(fields: [categoryId], references: [id], onDelete: Restrict)
   url               String?
   description       String?
   tags              String[]        @default([])
