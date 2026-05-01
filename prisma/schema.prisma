@@ -8,13 +8,13 @@ datasource db {
 }
 
 model User {
-  id           String         @id @default(uuid())
-  email        String         @unique
-  name         String?
-  passwordHash String
-  role         UserRole       @default(USER)
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt
+  id            String         @id @default(uuid())
+  email         String         @unique
+  name          String?
+  passwordHash  String
+  role          UserRole       @default(USER)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
   refreshTokens RefreshToken[]
 }
 
@@ -31,12 +31,13 @@ model RefreshToken {
 }
 
 model Super {
-  id        String   @id @default(uuid())
+  id        String              @id @default(uuid())
   name      String
   url       String
   parsers   Parser[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  products  NormalizedProduct[]
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
 }
 
 model Parser {
@@ -50,6 +51,52 @@ model Parser {
   @@index([superId])
 }
 
+model Category {
+  id           String              @id @default(uuid())
+  name         String              @unique
+  products     NormalizedProduct[]
+  translations CategoryAlias[]
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+}
+
+model CategoryAlias {
+  id         String   @id @default(uuid())
+  name       String
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([name])
+  @@index([name])
+}
+
+model NormalizedProduct {
+  id                String          @id @default(uuid())
+  superId           String
+  super             Super           @relation(fields: [superId], references: [id], onDelete: Cascade)
+  rawName           String
+  rawData           Json
+  name              String
+  searchName        String
+  measurementType   MeasurementType
+  measurementValue  Decimal         @db.Decimal(10, 3)
+  categoryId        String?
+  category          Category?       @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  url               String?
+  description       String?
+  tags              String[]        @default([])
+  normalizationDate DateTime?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  @@index([superId])
+  @@index([categoryId])
+  @@index([searchName])
+  @@index([tags], type: Gin)
+}
+
 enum UserRole {
   USER
   ADMIN
@@ -59,4 +106,10 @@ enum ParserStatus {
   ONGOING
   COMPLETED
   CANCELED
+}
+
+enum MeasurementType {
+  KG
+  L
+  UNIT
 }
