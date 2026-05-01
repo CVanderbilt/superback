@@ -1,0 +1,19 @@
+curl 'https://www.bonarea-online.com/es/shop/ShoppingBody' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: es-ES,es;q=0.9,en;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+  -b 'ASP.NET_SessionId=patecwminx2bpu13gd1bmbah; __RequestVerificationToken=vdiZv2g765NIeP6Vuh0QyQqwEL0lHrckyGh0rogT5lgUUpEnXgFA7k5rre_aPetFurNT61kcEHZSsZadgM0QN8SctujeG3mJE_X4hxpEDf01; cookiesession1=678A3E490B5BF82FF19ECCA5DB013146; OptanonAlertBoxClosed=2026-04-26T08:14:59.036Z; _ga=GA1.1.1547643118.1777191298; _gcl_au=1.1.1948038742.1777191299; _tt_enable_cookie=1; _ttp=01KQ4DPA6SEZ67FH7J0CCCMSQB_.tt.1; _fbp=fb.1.1777191299363.54510534646320020; _clck=r0udxh%5E2%5Eg5n%5E1%5E2307; cookies_consent=1; _ga_HE8R6EV19L=GS2.1.s1777580246$o3$g1$t1777580398$j53$l0$h0; OptanonConsent=isGpcEnabled=0&datestamp=Thu+Apr+30+2026+22%3A19%3A58+GMT%2B0200+(hora+de+verano+de+Europa+central)&version=202503.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=eb061b0c-6afb-417c-ae71-ec4ecf0b5b48&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0002%3A1%2CC0001%3A1%2CC0004%3A1%2CC0005%3A1&intType=1&geolocation=%3B&AwaitingReconsent=false; _clsk=bag6id%5E1777580572319%5E12%5E1%5El.clarity.ms%2Fcollect; _ga_PEJR3DRJDE=GS2.1.s1777580246$o3$g1$t1777580572$j60$l0$h0; ttcsid_CNUMMKRC77U5M8RPJ2R0=1777580247199::9UEZon22uC6JsNzWaMfk.3.1777580574993.1; ttcsid=1777580247200::4VH2vz0p5XjhNBVH9n4g.3.1777580574992.0::1.327826.151412::327776.19.158.245::325012.57.0' \
+  -H 'Origin: https://www.bonarea-online.com' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: https://www.bonarea-online.com/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua: "Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  --data-raw 'reference=13_300'
